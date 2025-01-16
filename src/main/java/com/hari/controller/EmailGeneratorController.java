@@ -1,6 +1,7 @@
 package com.hari.controller;
 
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,6 +20,7 @@ public class EmailGeneratorController {
     }
 
     @PostMapping("/generate")
+    @CrossOrigin("http://localhost:5173")
     public ResponseEntity<String> generateEmail(@RequestBody EmailRequest request) {
 
         String response = emailGeneratorService.generateEmailReply(request);
